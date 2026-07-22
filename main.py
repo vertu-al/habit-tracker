@@ -1,17 +1,16 @@
-from app.models import Habit, Periodicity
+"""Application entry point."""
+
+from app.cli import HabitTrackerCLI
+from app.database import HabitRepository
+from app.services import HabitService
 
 
 def main() -> None:
-    habit = Habit(
-        name="Drink water",
-        description="Drink at least two litres of water",
-        periodicity=Periodicity.DAILY,
-    )
+    repository = HabitRepository("data/habits.db")
+    service = HabitService(repository)
+    cli = HabitTrackerCLI(service)
 
-    habit.complete()
-
-    print(habit)
-    print(f"Completions: {len(habit.completions)}")
+    cli.run()
 
 
 if __name__ == "__main__":
