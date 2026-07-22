@@ -68,8 +68,7 @@ habit-tracker/
 │   ├── models.py
 │   └── services.py
 │
-├── data/
-│   └── habits.db
+├── data/    # SQLite database created automatically
 │
 ├── docs/
 │   └── concept.md
@@ -144,7 +143,7 @@ Analytics Functions
 Clone the repository.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vertu-al/habit-tracker.git
 cd habit-tracker
 ```
 
